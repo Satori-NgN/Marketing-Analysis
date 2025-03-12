@@ -35,6 +35,8 @@ This price segmentation (High/Medium/Low) will help us analyze whether price poi
 
 ![SQL1](https://github.com/Satori-NgN/Marketing-Analysis/blob/2c6515552786f5eead5bcec613283f33df812f4c/sql/image/sql1.png)
 
+[View SQL queries](https://github.com/Satori-NgN/Marketing-Analysis/blob/2602d497f586e127ef8b542beff533b0c7fdaf3b/sql/SQL-Dim_Products.sql)
+
 _**2. JOIN customers and geography tables to enrich customer data with geographic information**_ 
 
 As the geography table (10 rows) is a subset of the customers table (100 rows), I’ve used a LEFT JOIN to ensure we don't miss any customers without location data. However, our examination shows that all customers have valid GeographyIDs. Therefore, an INNER JOIN (JOIN) gives the same result. 
@@ -43,6 +45,8 @@ I've added an AgeGroup classification to enable age-based demographic analysis, 
 
 ![SQL2](https://github.com/Satori-NgN/Marketing-Analysis/blob/2c6515552786f5eead5bcec613283f33df812f4c/sql/image/sql2.png)
 
+[View SQL queries](https://github.com/Satori-NgN/Marketing-Analysis/blob/2602d497f586e127ef8b542beff533b0c7fdaf3b/sql/SQL-%20Dim_Customers.sql)
+
 _**3. Customer reviews table**_
 
 In the Customer reviews table, I've identified an issue with the ReviewText column containing double spaces that could affect text analysis and readability. The query uses the REPLACE function to convert all double spaces to single spaces, creating a standardized text format. This cleansing step is essential for accurate sentiment analysis later on. 
@@ -50,6 +54,8 @@ In the Customer reviews table, I've identified an issue with the ReviewText colu
 Additionally, the Review date is reformatted into dd.MM.yyyy. For date formatting, I combined FORMAT and CONVERT functions rather than just FORMAT function to ensure that any time components are removed and validates each value is a proper date, providing greater data integrity. 
 
 ![SQL3](https://github.com/Satori-NgN/Marketing-Analysis/blob/2c6515552786f5eead5bcec613283f33df812f4c/sql/image/sql3.png)
+
+[View SQL queries](https://github.com/Satori-NgN/Marketing-Analysis/blob/2602d497f586e127ef8b542beff533b0c7fdaf3b/sql/SQL-Fact_Customer_Reviews.sql)
 
 _**4. Engagement data table**_
 
@@ -69,6 +75,8 @@ Solution: Reformatting dates into dd.MM.yyyy
 
 ![SQL4](https://github.com/Satori-NgN/Marketing-Analysis/blob/2c6515552786f5eead5bcec613283f33df812f4c/sql/image/sql4.png)
 
+[View SQL queries](https://github.com/Satori-NgN/Marketing-Analysis/blob/2602d497f586e127ef8b542beff533b0c7fdaf3b/sql/SQL-Fact_Engagement_Data.sql)
+
 _**5. Customer journey table**_
 
 Before cleaning the Customer Journey data, I checked for duplicate records by comparing total rows with distinct business-relevant combinations. The results confirmed the presence of duplicate records, indicating that deduplication should be included in the data cleaning process. The original customer journey table also contained other issues: missing values (NULL) in the Duration column for Checkout drop-offs, inconsistent capitalization in the Stage column, and non-standardized date formats.
@@ -82,3 +90,5 @@ I used ROW_NUMBER instead of SELECT DISTINCT because it provides control over wh
 NULL values were replaced with average duration by date rather than a global average to preserve temporal patterns that might reflect seasonal factors, marketing campaigns, or website changes. 
 
 ![SQL6](https://github.com/Satori-NgN/Marketing-Analysis/blob/2c6515552786f5eead5bcec613283f33df812f4c/sql/image/sql6.png)
+
+[View SQL queries](https://github.com/Satori-NgN/Marketing-Analysis/blob/2602d497f586e127ef8b542beff533b0c7fdaf3b/sql/SQL-Fact_Customer_Journey.sql)
