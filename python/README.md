@@ -18,4 +18,26 @@ Key implementation features:
 
 This approach provides the nuanced sentiment categorization that identifies cases where review text sentiment doesn't align with numerical ratings.
 
+[View Python Code here](https://github.com/Satori-NgN/Marketing-Analysis/blob/main/python/Sentiment_Analysis.ipynb)
+
 ## Key Visualizations
+
+![Data Visualization](https://github.com/Satori-NgN/Marketing-Analysis/blob/main/python/sentiment_analysis_visualizations.png)
+
+The visualizations reveal:
+
+- **Sentiment Distribution**: 61.6% of reviews are positive, with the remaining ~38% distributed across negative and mixed sentiment categories. This shows that while most customers are satisfied, a significant portion express concerns.
+
+- **Rating-Sentiment Correlation**: Reviews with 4-5 star ratings consistently show positive sentiment scores, while 1-3 star ratings correlate with negative sentiment. The correlation validates our approach but also highlights cases of mixed sentiment.
+
+- **Sentiment Buckets**: Most reviews fall in the mildly positive (0.0 to 0.49) category, followed by strongly positive (0.5 to 1.0) and mildly negative (-0.49 to 0.0) sentiments.
+
+- **Review Length vs. Sentiment**: The scatter plot shows no strong correlation between review length and sentiment, suggesting that customer opinions are expressed regardless of verbosity.
+
+## Key Findings
+
+- **Mixed Sentiment Detection**: Reviews like "Good quality, but could be cheaper" receive mixed sentiment classifications, revealing nuances that ratings alone wouldn't capture.
+
+- **Rating-Sentiment Mismatches**: Some 3-star reviews contain distinctly negative language, while others contain positive sentiment, suggesting different customer expectations.
+
+- **Price Sensitivity**: Reviews mentioning price often received mixed sentiment scores regardless of rating, indicating this as a potential pain point.
