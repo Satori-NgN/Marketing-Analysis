@@ -19,3 +19,5 @@ SELECT
 	FORMAT(CONVERT(DATE, EngagementDate), 'dd.MM.yyyy') AS EngagementDate	-- Converts and formats the date as dd.MM.yyyy
 FROM
 	dbo.engagement_data	--The souce table from which to select the data
+WHERE 
+    ContentType != 'Newsletter';  -- Filters out rows where ContentType is 'Newsletter' as these are not relevant for our analysis
