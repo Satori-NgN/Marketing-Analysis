@@ -1,6 +1,0 @@
-
-*.sql linguist-detectale=true
-*.python linguist-detectale=true
-*.powerbi linguist-detectale=true
-*.DAX linguist-detectale=true
-*.jupiter notebook linguist-detectale=false
