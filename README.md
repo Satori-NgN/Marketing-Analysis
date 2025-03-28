@@ -36,4 +36,4 @@ This project delivers a marketing analytics solution through three key phases:
 
 [_**2. Sentiment Analysis (Python)**_](https://github.com/Satori-NgN/Marketing-Analysis/blob/main/python/README.md)
 
-[_**3. Data Visualization & Insights (Power BI)**_]()
+[_**3. Data Visualization & Insights (Power BI)**_](https://github.com/Satori-NgN/Marketing-Analysis/blob/main/powerbi/README.md)
